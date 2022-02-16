@@ -20,7 +20,7 @@ void printArray(int arr[], int size)
 int Partition(int arr[], int front, int end)
 {
     int pivot = arr[end];
-    int i = front - 1; // i is the last index of left array whose element is smallter than pivot
+    int i = front - 1; // i is the last index of left array whose element is smaller than pivot
 
     for (int j = front; j < end; j++) // j iterates the element which is about to be compared with pivot
     {

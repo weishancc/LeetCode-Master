@@ -32,7 +32,7 @@ public:
         /* If find deleted node */
         if (root->val == key)
         {
-            // Case1: lead node
+            // Case1: leaf node
             if (root->left == nullptr && root->right == nullptr)
             {
                 delete root;
@@ -64,7 +64,9 @@ public:
                     cur = cur->left;
 
                 cur->left = root->left;
+                TreeNode *tmp = root; // Keep the root because we'll update the new one
                 root = root->right;
+                delete tmp;
 
                 return root;
             }
