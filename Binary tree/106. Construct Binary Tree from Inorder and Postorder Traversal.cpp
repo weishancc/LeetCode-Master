@@ -38,7 +38,7 @@ public:
         if (postorder.size() == 1)
             return root;
 
-        /* (3) Find index of the split node in inorder*/
+        /* (3) Find split node in inorder*/
         int index;
         for (index = 0; index < inorder.size(); index++)
         {

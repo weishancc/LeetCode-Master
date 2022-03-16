@@ -22,7 +22,7 @@ void merge(int arr[], int left, int mid, int right)
         leftSub[i] = arr[left + i];
 
     for (int j = 0; j < n2; j++)
-        rightSub[j] = arr[mid + 1+ j];
+        rightSub[j] = arr[mid + 1 + j];
 
     /* Pick larger element among leftSub and rightSub and place them to correct position if arr;
        i, j ,k is the index of leftSub, rightSub and main array respetively */

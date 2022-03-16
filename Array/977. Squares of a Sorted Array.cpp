@@ -5,22 +5,23 @@ class Solution
 public:
     std::vector<int> sortedSquares(std::vector<int> &nums)
     {
-        int k = nums.size() - 1; //
-        std::vector<int> result(nums.size());
+        std::vector<int> res(nums.size(), 0);
+        int k = nums.size() - 1;
 
         for (int i = 0, j = nums.size() - 1; i <= j;)
         {
-            if (nums[i] * nums[i] < nums[j] * nums[j])
+            if (nums[i] * nums[i] > nums[j] * nums[j])
             {
-                result[k--] = nums[j] * nums[j];
-                j--;
+                res[k--] = nums[i] * nums[i];
+                i++;
             }
             else
             {
-                result[k--] = nums[i] * nums[i];
-                i++;
+                res[k--] = nums[j] * nums[j];
+                j--;
             }
         }
-        return result;
+
+        return res;
     }
 };

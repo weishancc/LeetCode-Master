@@ -47,24 +47,24 @@ public:
 
         while (!qu.empty())
         {
-            Node *node;
-            Node *nodePre; // Previous node of *node variable
-
             int size = qu.size();
+            Node *node;
+            Node *pre; // Previous node of *node variable
+
             for (int i = 0; i < size; i++)
             {
                 if (i == 0)
                 {
-                    nodePre = qu.front();
+                    node = qu.front();
                     qu.pop();
-                    node = nodePre;
+                    pre = node;
                 }
                 else
                 {
                     node = qu.front();
                     qu.pop();
-                    nodePre->next = node;
-                    nodePre = nodePre->next;
+                    pre->next = node;
+                    pre = node;
                 }
 
                 if (node->left)
@@ -72,7 +72,7 @@ public:
                 if (node->right)
                     qu.push(node->right);
             }
-            nodePre->next = nullptr; // The last node in each level points to nullptr
+            node->next = nullptr; // The last node in each level points to nullptr
         }
 
         return root;
